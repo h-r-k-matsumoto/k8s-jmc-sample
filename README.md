@@ -6,18 +6,19 @@ You can check the following actions by enabling Java Flight Recoreder.
  - Memory dump information on occurrence of Out Of Memory
 
 
-### ビルド
-下記コマンドを実行するだけで、Google Container Registryにイメージが登録されます。
-`sample-project` は、GCPプロジェクト名を指定してください。
+### Build
+
+`gcp.roject.name` :  specify the project ID to push to google container registry.
 
 ```
 mvn -Dgcp.project.name=sample-project compile jib:build
 ```
 
-### 配備
-下記コマンドを実行し、kubernetesに配備を行います。<br>
-deployments.xmlのimage部分のGCPプロジェクト名は適宜変更を行ってください。
-そして、 `gcloud container clusters get-credentials ～ ` コマンドにてクラスタに接続を行ってください。
+### Deploy
+
+1. Please change {change-it-me} of image of 020_deployments.yaml.
+
+2. kubectl apply .<br>
 
 ```
 spring-boot-sample>kubectl apply -f kubernetes
